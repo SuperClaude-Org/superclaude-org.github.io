@@ -243,7 +243,16 @@ Tested and optimized for:
 This website project follows the same MIT License as SuperClaude v3.
 
 ## SuperClaude_Website Current Contributors
-[![Contributors](https://contrib.rocks/image?repo=SuperClaude-Org/SuperClaude_Website)](https://github.com/SuperClaude-Org/SuperClaude_Website/graphs/contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+## 👥 Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+> ✨ Contributions by role: 💻 code, 📖 docs, 💡 ideas, 🎨 design
 
 
 ---
