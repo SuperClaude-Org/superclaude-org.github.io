@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperClaude v3 🚀 - Advanced Development Framework for Claude Code</title>
+    <meta name="description" content="SuperClaude v3 is a framework that extends Claude Code with 16 specialized commands, smart personas, and MCP server integration. Fresh out of beta with unified CLI installer.">
+    <meta name="keywords" content="SuperClaude v3, Claude Code, AI coding, development framework, MCP integration, slash commands, personas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SuperClaude v3 - Advanced Development Framework for Claude Code">
+    <meta property="og:description" content="16 specialized commands, smart personas, and MCP server integration for enhanced Claude Code development workflows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://superclaude.org">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo2.png">
+
+    <!-- TailwindCSS 3.0+ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav glass-effect shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-nav">
+                        <img src="assets/images/logo2.png" alt="SuperClaude Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-xl md:text-2xl font-bold gradient-text">SuperClaude v3</div>
+                    <div class="status-indicator text-xs md:text-sm">
+                        <i class="fas fa-rocket mr-1"></i>
+                        <span class="mobile-hide">Fresh </span>Release
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#features" class="hover:text-orange-600 transition-colors">Features</a>
+                    <a href="#installation" class="hover:text-orange-600 transition-colors">Installation</a>
+                    <a href="#commands" class="hover:text-orange-600 transition-colors">Commands</a>
+                    <a href="#personas" class="hover:text-orange-600 transition-colors">Personas</a>
+                    <a href="#contributors" class="hover:text-orange-600 transition-colors">Contributors</a>
+                    <a href="#faq" class="hover:text-orange-600 transition-colors">FAQ</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-3 text-sm font-medium pt-4">
+                    <a href="#features" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">Features</a>
+                    <a href="#installation" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">Installation</a>
+                    <a href="#commands" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">Commands</a>
+                    <a href="#personas" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">Personas</a>
+                    <a href="#contributors" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">Contributors</a>
+                    <a href="#faq" class="hover:text-orange-600 transition-colors" onclick="toggleMobileMenu()">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-12 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="logo-container mb-6 md:mb-8">
+                <img src="assets/images/logo2.png" alt="SuperClaude v3 Logo" class="w-full h-full object-cover">
+            </div>
+
+            <div class="version-badge">
+                <i class="fas fa-star mr-2"></i>
+                Version 3.0.0 - Initial Release
+            </div>
+
+            <h1 class="mega-title mb-4 md:mb-6">SuperClaude v3</h1>
+
+            <p class="text-lg md:text-2xl text-gray-700 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
+                A framework that extends <strong>Claude Code</strong> with <span class="gradient-text font-bold">16 specialized commands</span>, 
+                <span class="gradient-text font-bold">smart personas</span>, and <span class="gradient-text font-bold">MCP server integration</span>
+            </p>
+
+            <!-- Clickable Badges -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
+                <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener" class="badge-link">
+                    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" class="h-6">
+                </a>
+                <a href="https://pypi.org/project/SuperClaude/" target="_blank" rel="noopener" class="badge-link">
+                    <img src="https://img.shields.io/pypi/v/SuperClaude.svg" alt="PyPI version" class="h-6">
+                </a>
+                <a href="https://github.com/NomenAK/SuperClaude" target="_blank" rel="noopener" class="badge-link">
+                    <img src="https://img.shields.io/github/stars/NomenAK/SuperClaude?style=social" alt="GitHub stars" class="h-6">
+                </a>
+                <a href="https://github.com/NomenAK/SuperClaude/issues" target="_blank" rel="noopener" class="badge-link">
+                    <img src="https://img.shields.io/github/issues/NomenAK/SuperClaude" alt="GitHub issues" class="h-6">
+                </a>
+                <a href="https://github.com/NomenAK/SuperClaude/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="badge-link">
+                    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" class="h-6">
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12 px-4">
+                <div class="claude-bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center text-sm md:text-base">
+                    <i class="fab fa-github mr-2"></i>
+                    Open Source (MIT)
+                </div>
+                <div class="claude-bg-secondary text-white px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center text-sm md:text-base">
+                    <i class="fas fa-download mr-2"></i>
+                    PyPI Available
+                </div>
+                <div class="claude-bg-accent text-white px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center text-sm md:text-base">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    100% Local
+                </div>
+            </div>
+
+            <div class="claude-bg-light rounded-2xl p-4 md:p-6 max-w-2xl mx-auto">
+                <h3 class="text-lg font-bold claude-primary mb-3">⚠️ Fresh Out of Beta!</h3>
+                <p class="text-gray-700 text-sm md:text-base">
+                    This is an initial release - bugs may occur as we continue improving. 
+                    Perfect for experimentation and development workflows! 😊
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Overview -->
+    <section id="features" class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">
+                What Makes <span class="gradient-text">SuperClaude v3</span> Special?
+            </h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-12 md:mb-16 px-4">
+                Built from the ground up with a focus on simplicity, reliability, and performance
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+                <div class="feature-card rounded-2xl p-6 md:p-8 text-center">
+                    <div class="text-4xl md:text-6xl font-bold claude-primary mb-4">16</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Specialized Commands</h3>
+                    <p class="text-gray-600 mb-6 text-sm md:text-base">Essential commands for the most common development tasks</p>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex items-center justify-center"><i class="fas fa-code claude-accent mr-2"></i>/sc:implement, /sc:build, /sc:design</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-search claude-accent mr-2"></i>/sc:analyze, /sc:troubleshoot</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-check claude-accent mr-2"></i>/sc:test, /sc:improve</div>
+                    </div>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 md:p-8 text-center">
+                    <div class="text-4xl md:text-6xl font-bold claude-secondary mb-4">AI</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Smart Personas</h3>
+                    <p class="text-gray-600 mb-6 text-sm md:text-base">Domain specialists that jump in when relevant</p>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex items-center justify-center"><i class="fas fa-building claude-accent mr-2"></i>🏗️ architect - Systems design</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-palette claude-accent mr-2"></i>🎨 frontend - UI/UX focus</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-shield-alt claude-accent mr-2"></i>🛡️ security - Vulnerability analysis</div>
+                    </div>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 md:p-8 text-center">
+                    <div class="text-4xl md:text-6xl font-bold claude-accent mb-4">MCP</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Server Integration</h3>
+                    <p class="text-gray-600 mb-6 text-sm md:text-base">External tools that connect when useful</p>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex items-center justify-center"><i class="fas fa-book claude-accent mr-2"></i>Context7 - Official docs</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-brain claude-accent mr-2"></i>Sequential - Multi-step thinking</div>
+                        <div class="flex items-center justify-center"><i class="fas fa-magic claude-accent mr-2"></i>Magic - UI components</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Grid -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-green-800 mb-6 flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i>
+                        What's Working Well
+                    </h3>
+                    <ul class="space-y-3 text-green-700 text-sm md:text-base">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-3 mt-1"></i>Installation suite (rewritten from ground up)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-3 mt-1"></i>Core framework with 9 documentation files</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-3 mt-1"></i>16 slash commands for development tasks</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-3 mt-1"></i>MCP server integration (Context7, Sequential, Magic, Playwright)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-3 mt-1"></i>Unified CLI installer for easy setup</li>
+                    </ul>
+                </div>
+
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-yellow-800 mb-6 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>
+                        Known Issues
+                    </h3>
+                    <ul class="space-y-3 text-yellow-700 text-sm md:text-base">
+                        <li class="flex items-start"><i class="fas fa-bug text-yellow-500 mr-3 mt-1"></i>Initial release - bugs are expected</li>
+                        <li class="flex items-start"><i class="fas fa-wrench text-yellow-500 mr-3 mt-1"></i>Some features may not work perfectly yet</li>
+                        <li class="flex items-start"><i class="fas fa-book text-yellow-500 mr-3 mt-1"></i>Documentation is still being improved</li>
+                        <li class="flex items-start"><i class="fas fa-unlink text-yellow-500 mr-3 mt-1"></i>Hooks system was removed (coming back in v4)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="py-12 md:py-20 hero-gradient">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">
+                Installation <span class="gradient-text">Guide</span>
+            </h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-12 md:mb-16 px-4">
+                Two-step process: Install the package, then run the installer
+            </p>
+
+            <div class="space-y-6 md:space-y-8">
+                <!-- Step 1 -->
+                <div class="installation-step rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 claude-bg-primary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto md:mx-0">
+                            1
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 mobile-center">Install the Package</h3>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-sm md:text-base">Option A: From PyPI (Recommended)</h4>
+                                    <div class="bg-gray-900 text-green-400 rounded-lg p-3 md:p-4 font-mono text-xs md:text-sm overflow-x-auto relative group">
+                                        <button onclick="copyToClipboard('uv add SuperClaude')" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fas fa-copy mr-1"></i>Copy
+                                        </button>
+                                        uv add SuperClaude
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-sm md:text-base">Option B: From Source</h4>
+                                    <div class="bg-gray-900 text-green-400 rounded-lg p-3 md:p-4 font-mono text-xs md:text-sm overflow-x-auto relative group">
+                                        <button onclick="copyToClipboard('git clone https://github.com/NomenAK/SuperClaude.git\ncd SuperClaude\nuv sync')" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fas fa-copy mr-1"></i>Copy
+                                        </button>
+                                        git clone https://github.com/NomenAK/SuperClaude.git<br>
+                                        cd SuperClaude<br>
+                                        uv sync
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="installation-step rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 claude-bg-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto md:mx-0">
+                            2
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 mobile-center">Run the Installer</h3>
+                            <div class="bg-gray-900 text-green-400 rounded-lg p-3 md:p-4 font-mono text-xs md:text-sm mb-4 overflow-x-auto relative group">
+                                <button onclick="copyToClipboard('# Quick setup (recommended)\nSuperClaude install\n\n# Interactive selection\nSuperClaude install --interactive\n\n# Developer setup\nSuperClaude install --profile developer')" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-copy mr-1"></i>Copy
+                                </button>
+                                # Quick setup (recommended)<br>
+                                SuperClaude install<br><br>
+                                # Interactive selection<br>
+                                SuperClaude install --interactive<br><br>
+                                # Developer setup<br>
+                                SuperClaude install --profile developer
+                            </div>
+                            <p class="text-gray-700 text-sm md:text-base mobile-center">
+                                <strong>That's it! 🎉</strong> The installer handles everything: framework files, MCP servers, and Claude Code configuration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Note for v2 Users -->
+            <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-6 md:p-8 mt-8 md:mt-12">
+                <h3 class="text-xl md:text-2xl font-bold text-red-800 mb-4 flex flex-col md:flex-row items-center">
+                    <i class="fas fa-exclamation-triangle mr-0 md:mr-3 mb-2 md:mb-0"></i>
+                    ⚠️ Upgrading from v2? Important!
+                </h3>
+                <div class="text-red-700 space-y-3 text-sm md:text-base">
+                    <p><strong>Clean up first:</strong> Uninstall v2 and delete SuperClaude/, ~/.claude/shared/, ~/.claude/commands/</p>
+                    <p><strong>Key Change:</strong> <code>/build</code> is now <code>/sc:implement</code> for feature implementation</p>
+                    <p><strong>Migration:</strong> Replace <code>v2 /build myFeature</code> with <code>v3 /sc:implement myFeature</code></p>
+                </div>
+            </div>
+
+            <!-- Documentation Links Section -->
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 md:p-8 mt-8 md:mt-12">
+                <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-6 flex flex-col md:flex-row items-center">
+                    <i class="fas fa-book mr-0 md:mr-3 mb-2 md:mb-0"></i>
+                    📚 Next Steps: Documentation & Guides
+                </h3>
+                <p class="text-blue-700 mb-6 text-sm md:text-base">
+                    After installation, check out these comprehensive guides to get the most out of SuperClaude v3:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="space-y-3">
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/superclaude-user-guide.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-user-graduate text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">User Guide</div>
+                                <div class="text-xs text-blue-600">Complete overview & getting started</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/commands-guide.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-terminal text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">Commands Guide</div>
+                                <div class="text-xs text-blue-600">All 16 slash commands explained</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/personas-guide.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-users text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">Personas Guide</div>
+                                <div class="text-xs text-blue-600">Understanding the persona system</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/installation-guide.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-download text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">Installation Guide</div>
+                                <div class="text-xs text-blue-600">Detailed installation instructions</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/flags-guide.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-flag text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">Flags Guide</div>
+                                <div class="text-xs text-blue-600">Command flags and options</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="flex items-center p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 transition-colors group">
+                            <i class="fas fa-hands-helping text-blue-600 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-blue-800 group-hover:text-blue-600">Contributing</div>
+                                <div class="text-xs text-blue-600">How to contribute to the project</div>
+                            </div>
+                            <i class="fas fa-external-link-alt text-blue-400 ml-auto"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section id="commands" class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
+                <span class="gradient-text">16 Essential Commands</span>
+            </h2>
+
+            <div class="command-grid">
+                <!-- Development Commands -->
+                <div class="feature-card rounded-2xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold claude-primary mb-4 flex items-center">
+                        <i class="fas fa-code mr-3"></i>
+                        Development
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex justify-between"><code>/sc:implement</code><span class="text-gray-600">Build features</span></div>
+                        <div class="flex justify-between"><code>/sc:build</code><span class="text-gray-600">Compile/package</span></div>
+                        <div class="flex justify-between"><code>/sc:design</code><span class="text-gray-600">UI/UX design</span></div>
+                    </div>
+                </div>
+
+                <!-- Analysis Commands -->
+                <div class="feature-card rounded-2xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold claude-secondary mb-4 flex items-center">
+                        <i class="fas fa-search mr-3"></i>
+                        Analysis
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex justify-between"><code>/sc:analyze</code><span class="text-gray-600">Code analysis</span></div>
+                        <div class="flex justify-between"><code>/sc:troubleshoot</code><span class="text-gray-600">Debug issues</span></div>
+                        <div class="flex justify-between"><code>/sc:explain</code><span class="text-gray-600">Code explanation</span></div>
+                    </div>
+                </div>
+
+                <!-- Quality Commands -->
+                <div class="feature-card rounded-2xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold claude-accent mb-4 flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i>
+                        Quality
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex justify-between"><code>/sc:improve</code><span class="text-gray-600">Code enhancement</span></div>
+                        <div class="flex justify-between"><code>/sc:test</code><span class="text-gray-600">Testing suites</span></div>
+                        <div class="flex justify-between"><code>/sc:cleanup</code><span class="text-gray-600">Code cleanup</span></div>
+                    </div>
+                </div>
+
+                <!-- Utility Commands -->
+                <div class="feature-card rounded-2xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold claude-primary mb-4 flex items-center">
+                        <i class="fas fa-tools mr-3"></i>
+                        Utilities
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="flex justify-between"><code>/sc:document</code><span class="text-gray-600">Documentation</span></div>
+                        <div class="flex justify-between"><code>/sc:git</code><span class="text-gray-600">Git operations</span></div>
+                        <div class="flex justify-between"><code>/sc:estimate</code><span class="text-gray-600">Time estimates</span></div>
+                        <div class="flex justify-between"><code>/sc:task</code><span class="text-gray-600">Task management</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personas Section -->
+    <section id="personas" class="py-12 md:py-20 hero-gradient">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
+                Smart <span class="gradient-text">Personas</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">🏗️</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">architect</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Systems design and architecture planning</p>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">🎨</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">frontend</h3>
+                    <p class="text-gray-600 text-sm md:text-base">UI/UX and accessibility focused development</p>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">⚙️</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">backend</h3>
+                    <p class="text-gray-600 text-sm md:text-base">APIs and infrastructure development</p>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">🔍</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">analyzer</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Debugging and problem-solving specialist</p>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">🛡️</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">security</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Security concerns and vulnerability assessment</p>
+                </div>
+
+                <div class="feature-card rounded-2xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl mb-4">✍️</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">scribe</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Documentation and technical writing</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 md:mt-12">
+                <p class="text-base md:text-lg text-gray-600">
+                    <em>+ 3 more specialists that jump in when relevant!</em> 
+                    <br>They don't always pick perfectly, but usually get it right! 😊
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributors Board Section -->
+    <section id="contributors" class="py-12 md:py-20 hero-gradient">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">
+                SuperClaude <span class="gradient-text">Contributors</span>
+            </h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-12 md:mb-16 px-4">
+                Amazing developers who make SuperClaude possible
+            </p>
+
+            <div class="text-center mb-8 md:mb-12">
+                <a href="https://github.com/NomenAK/SuperClaude/graphs/contributors" target="_blank" rel="noopener" class="inline-block">
+                    <img src="https://contrib.rocks/image?repo=NomenAK/SuperClaude&max=100&columns=20" alt="SuperClaude Contributors" class="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-full h-auto">
+                </a>
+                <p class="mt-4 text-gray-600 text-sm">
+                    <span id="contributor-count">Loading...</span> contributors and counting! 
+                    <a href="https://github.com/NomenAK/SuperClaude/graphs/contributors" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 underline">
+                        View all contributors →
+                    </a>
+                </p>
+            </div>
+
+            <!-- Featured Contributors -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Contributor Card Template - Main Developer -->
+                <div class="feature-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300">
+                    <a href="https://github.com/NomenAK" target="_blank" rel="noopener" class="block">
+                        <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 group-hover:border-orange-400 transition-colors">
+                            <img src="https://github.com/NomenAK.png" alt="NomenAK" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold claude-primary mb-2">NomenAK</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2">Project Creator & Lead Developer</p>
+                        <div class="flex justify-center space-x-2 text-xs">
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Python</span>
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Framework</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Mithun Gowda B -->
+                <div class="feature-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300">
+                    <a href="https://github.com/mithun50" target="_blank" rel="noopener" class="block">
+                        <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 group-hover:border-orange-400 transition-colors">
+                            <img src="https://github.com/mithun50.png" alt="Mithun Gowda B" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold claude-primary mb-2">Mithun Gowda B</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2">Collaborator & Contributor</p>
+                        <div class="flex justify-center space-x-2 text-xs">
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Development</span>
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Testing</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Community Contributors Placeholder -->
+                <div class="feature-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300">
+                    <a href="https://github.com/NomenAK/SuperClaude/graphs/contributors" target="_blank" rel="noopener" class="block">
+                        <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 group-hover:border-orange-400 transition-colors bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                            <i class="fas fa-users text-2xl md:text-3xl claude-primary"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold claude-primary mb-2">Contributors</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2">Community Members</p>
+                        <div class="flex justify-center space-x-2 text-xs">
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Docs</span>
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Testing</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Join Us Card -->
+                <div class="feature-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300 border-2 border-dashed border-orange-300">
+                    <a href="https://github.com/NomenAK/SuperClaude/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="block">
+                        <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-300 group-hover:border-orange-500 transition-colors bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                            <i class="fas fa-plus text-2xl md:text-3xl claude-primary"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold claude-primary mb-2">Join Us!</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2">Become a Contributor</p>
+                        <div class="flex justify-center space-x-2 text-xs">
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Welcome</span>
+                            <span class="claude-bg-light px-2 py-1 rounded-full">Open</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- GitHub Sponsor Card -->
+                <div class="feature-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-50 to-red-50">
+                    <a href="https://github.com/sponsors/NomenAK" target="_blank" rel="noopener" class="block">
+                        <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-pink-200 group-hover:border-pink-400 transition-colors bg-gradient-to-br from-pink-100 to-red-100 flex items-center justify-center">
+                            <i class="fas fa-heart text-2xl md:text-3xl text-pink-600"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-pink-700 mb-2">Sponsor</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2">Support Development</p>
+                        <div class="flex justify-center space-x-2 text-xs">
+                            <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-full">GitHub</span>
+                            <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-full">❤️</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-8 md:mt-12">
+                <div class="claude-bg-light rounded-2xl p-6 md:p-8 max-w-2xl mx-auto">
+                    <h3 class="text-lg md:text-xl font-bold claude-primary mb-4">
+                        <i class="fas fa-code-branch mr-2"></i>
+                        Want to Contribute?
+                    </h3>
+                    <p class="text-gray-700 mb-6 text-sm md:text-base">
+                        We welcome contributions of all kinds! From bug reports to new features, documentation improvements to code reviews.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a href="https://github.com/NomenAK/SuperClaude/issues" target="_blank" rel="noopener" class="claude-bg-primary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors text-sm md:text-base">
+                            <i class="fas fa-bug mr-2"></i>
+                            Report Issues
+                        </a>
+                        <a href="https://github.com/NomenAK/SuperClaude/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="claude-bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors text-sm md:text-base">
+                            <i class="fas fa-hands-helping mr-2"></i>
+                            Contribute Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 md:py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
+                Frequently Asked <span class="gradient-text">Questions</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="feature-card rounded-xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Why was the hooks system removed?</h3>
+                    <p class="text-gray-700 text-sm md:text-base">It was getting complex and buggy. We're redesigning it properly for v4.</p>
+                </div>
+
+                <div class="feature-card rounded-xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Does this work with other AI assistants?</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Currently Claude Code only, but v4 will have broader compatibility.</p>
+                </div>
+
+                <div class="feature-card rounded-xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Is this stable enough for daily use?</h3>
+                    <p class="text-gray-700 text-sm md:text-base">The basic stuff works pretty well, but definitely expect some rough edges since it's a fresh release. Probably fine for experimenting! 🧪</p>
+                </div>
+
+                <div class="feature-card rounded-xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">How does SuperClaude ensure privacy?</h3>
+                    <p class="text-gray-700 text-sm md:text-base">SuperClaude runs 100% locally with no third-party servers or data collection. It's open source and MIT licensed.</p>
+                </div>
+
+                <div class="feature-card rounded-xl p-6">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">What's coming in v4?</h3>
+                    <p class="text-gray-700 text-sm md:text-base">We're hoping to work on hooks system redesign, more MCP integrations, better performance, additional personas, and cross-CLI support. No timeline promises though! 😅</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="claude-bg-primary text-white py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <div class="logo-container mx-auto mb-6 border-white">
+                    <img src="assets/images/logo2.png" alt="SuperClaude Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">SuperClaude v3</h3>
+                <p class="text-orange-200 text-base md:text-lg mb-6 md:mb-8">Advanced Development Framework for Claude Code</p>
+
+                <div class="flex justify-center space-x-6 md:space-x-8 mb-6 md:mb-8">
+                    <a href="https://github.com/NomenAK/SuperClaude" target="_blank" rel="noopener" class="text-orange-200 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl md:text-3xl"></i>
+                    </a>
+                    <a href="https://pypi.org/project/SuperClaude/" target="_blank" rel="noopener" class="text-orange-200 hover:text-white transition-colors">
+                        <i class="fab fa-python text-2xl md:text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+                <div class="mobile-center">
+                    <h4 class="text-lg md:text-xl font-bold mb-4">Documentation</h4>
+                    <ul class="space-y-2 text-orange-200 text-sm md:text-base">
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/superclaude-user-guide.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">User Guide</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/commands-guide.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Commands Guide</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/installation-guide.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Installation Guide</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/personas-guide.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Personas Guide</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/Docs/flags-guide.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Flags Guide</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h4 class="text-lg md:text-xl font-bold mb-4">Community</h4>
+                    <ul class="space-y-2 text-orange-200 text-sm md:text-base">
+                        <li><a href="https://github.com/NomenAK/SuperClaude/issues" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub Issues</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/discussions" target="_blank" rel="noopener" class="hover:text-white transition-colors">Discussions</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contributing</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/graphs/contributors" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h4 class="text-lg md:text-xl font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-orange-200 text-sm md:text-base">
+                        <li><a href="https://github.com/NomenAK/SuperClaude/tree/master/examples" target="_blank" rel="noopener" class="hover:text-white transition-colors">Examples</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/releases" target="_blank" rel="noopener" class="hover:text-white transition-colors">Changelog</a></li>
+                        <li><a href="https://github.com/NomenAK/SuperClaude/projects" target="_blank" rel="noopener" class="hover:text-white transition-colors">Roadmap</a></li>
+                        <li><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener" class="hover:text-white transition-colors">License</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center pt-6 md:pt-8 border-t border-orange-300">
+                <p class="text-orange-200 text-sm md:text-base">
+                    &copy; 2025 SuperClaude. Released under MIT License. 
+                    <br class="md:hidden">
+                    <em>Built by developers who got tired of generic responses. Hope you find it useful! 🙂</em>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

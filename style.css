@@ -1,0 +1,9 @@
+
+/* Legacy styles - moved to css/styles.css */
+/* This file is kept for backward compatibility */
+/* All styles have been reorganized into the css/styles.css file */
+
+html {
+  height: 100%;
+  width: 100%;
+}
