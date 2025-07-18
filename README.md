@@ -243,7 +243,7 @@ Tested and optimized for:
 This website project follows the same MIT License as SuperClaude v3.
 
 ## SuperClaude_Website Current Contributors
-(https://contrib.rocks/image?repo=SuperClaude-Org/SuperClaude_Website)](https://github.com/SuperClaude-Org/SuperClaude_Website/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=SuperClaude-Org/SuperClaude_Website)](https://github.com/SuperClaude-Org/SuperClaude_Website/graphs/contributors)
 
 
 ---
